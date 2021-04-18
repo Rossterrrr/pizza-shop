@@ -1,0 +1,21 @@
+.filter-btn{
+    background-color: #F9F9F9;
+    padding: 15px 30px;
+    border:none;
+    border-radius:30px ;
+    outline: none;
+    text-decoration: none;
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 10px;
+    font-weight: 900;
+    cursor: pointer;
+    transition: all ease-out 200ms;
+}
+.active{
+    background-color: #282828;
+    color:white;
+}
+.filter-btn:hover{
+    background-color: #dadada;
+}
