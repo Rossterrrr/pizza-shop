@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../header/header';
 import Cart from '../cart/cart';
+import EmptyCart from '../empty-cart/empty-cart';
 import './app.css';
 
 export default class BuyCartPage extends React.Component{
@@ -8,16 +9,22 @@ export default class BuyCartPage extends React.Component{
 		super(props);
 	}
 	render(){
-		document.body.style.cssText += ` 
-			background-color:#FFDF8C;
-			font-family: 'Nunito', sans-serif;
-		`	 
-		return (
-			<div className="container">
-				<Header></Header>
-				<Cart data={this.props.data} onDecr={this.props.onDecr} onIncr={this.props.onIncr} onDeleteItem={this.props.onDeleteItem}></Cart>
-			</div>	
-		)
+		if(this.props.cart.length != 0){
+			return (
+				<div className="container">
+					<Header></Header>
+					<Cart cart={this.props.cart} onDecr={this.props.onDecr} onIncr={this.props.onIncr} onDeleteItem={this.props.onDeleteItem} onClearCart={this.props.onClearCart}></Cart>
+				</div>	
+			)
+		}else{
+			return (
+				<div className="container">
+					<Header></Header>
+					<EmptyCart></EmptyCart>
+				</div>	
+			)
+		}
+		
 			
 	}
 }

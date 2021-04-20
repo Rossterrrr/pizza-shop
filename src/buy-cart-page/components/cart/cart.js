@@ -14,8 +14,8 @@ export default class Cart extends React.Component{
         this.itemsCountCalc = this.itemsCountCalc.bind(this);
         this.cartSumCalc = this.cartSumCalc.bind(this);
     }
-    getDOMItems(){
-        const elements = this.state.data.map(element => {
+    getDOMItems(data){
+        const elements = data.map(element => {
             return(
                 <CartItem 
                     data={element} 
@@ -27,17 +27,17 @@ export default class Cart extends React.Component{
         });
         return elements;
     }
-    cartSumCalc(){
+    cartSumCalc(data){
         let sum = 0;
-        this.state.data.forEach(item => {
+        data.forEach(item => {
             sum += item.sum;
         });
         return sum;
         
     }
-    itemsCountCalc(){
+    itemsCountCalc(data){
         let count = 0;
-        this.state.data.forEach(item => {
+        data.forEach(item => {
             count += item.sellcount;
         })
         return count;
@@ -48,13 +48,13 @@ export default class Cart extends React.Component{
             <div className="cart-container">
                 <div className="cart-header">  
                     <h3><i className="material-icons cart-icon">shopping_cart</i> Корзина</h3>
-                    <button className="clear-cart"><i className="material-icons delete-icon">delete</i>Очистить корзину</button>
+                    <button className="clear-cart" onClick={this.props.onClearCart}><i className="material-icons delete-icon">delete</i>Очистить корзину</button>
                 </div>
-                {this.getDOMItems()}
+                {this.getDOMItems(this.props.cart)}
                 <div className="cart-footer">
                     <div className="footer-info">
-                        <h4>Всего пицц: <span className="pizza-count">{this.itemsCountCalc()} шт</span></h4>
-                        <h4>Сумма заказа: <span className="final-full-price">{this.cartSumCalc()}Р</span></h4>
+                        <h4>Всего пицц: <span className="pizza-count">{this.itemsCountCalc(this.props.cart)} шт</span></h4>
+                        <h4>Сумма заказа: <span className="final-full-price">{this.cartSumCalc(this.props.cart)}Р</span></h4>
                     </div>
                     <div className="footer-btns">
                         <Link to="/" className="go-back"><i className="material-icons back">arrow_back_ios</i>Вернуться назад</Link>

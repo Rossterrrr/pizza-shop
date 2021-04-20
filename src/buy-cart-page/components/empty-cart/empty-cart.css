@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+.empty-cart-content{
+    display: flex;
+    flex-direction: column;
+    width: 44%;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+.empty-cart-content h3{
+    font-size: 30px;
+}
+.black{
+    background-color: black;
+    border: black;
+    color:white;
+}
+.black:hover{
+    color:white;
+}
+.empty-cart-description p{
+    font-size: 14px;
+    text-align: center;
+    margin:5px 0;
+    letter-spacing: 0.1em;
+    font-family: 'Comfortaa', cursive;
+
+}
+.empty-cart-img{
+    margin:50px 0;
+}
