@@ -51,6 +51,7 @@
     justify-content: center;
     align-items: center;
     transition: all ease-out 200ms;
+    cursor: pointer;
 }
 .cart-item-add,.cart-item-remove,.cart-items-clear{
     font-size: 18px;
@@ -66,6 +67,7 @@
     background-color: transparent;
     color:#8d8d8d;
     transition: all ease-out 200ms;
+    cursor: pointer;
 }
 .incr:hover,.decr:hover{
     transform: scale(1.1);
@@ -78,4 +80,10 @@
     color:white;
     transform: scale(1.1);
     transition: all ease-out 200ms;
+}
+.configurator{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
 }

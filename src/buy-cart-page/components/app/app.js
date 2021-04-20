@@ -15,11 +15,8 @@ export default class BuyCartPage extends React.Component{
 		return (
 			<div className="container">
 				<Header></Header>
-				<Cart></Cart>
-			</div>
-			
-			
-			
+				<Cart data={this.props.data} onDecr={this.props.onDecr} onIncr={this.props.onIncr} onDeleteItem={this.props.onDeleteItem}></Cart>
+			</div>	
 		)
 			
 	}
